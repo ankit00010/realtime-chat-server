@@ -1,0 +1,50 @@
+{
+  "name": "realtime-chat-server",
+  "version": "1.0.0",
+  "description": "Real-time chat server using Express, TypeScript, MongoDB, and Socket.IO",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node dist/index",
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
+    "lint": "eslint . --ext .ts",
+    "prepare": "npm run build"
+  },
+  "keywords": ["chat", "real-time", "express", "typescript", "socket.io", "mongodb"],
+  "author": "Ankit Mishra",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "chalk": "^5.4.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.15.0",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^22.14.1",
+    "@types/socket.io": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "nodemon": "^3.1.9",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "eslint": "^9.24.0",
+    "@typescript-eslint/parser": "^8.30.1",
+    "@typescript-eslint/eslint-plugin": "^8.30.1"
+  },
+  "pre-commit": [
+    "ts.check",
+    "lint",
+    "build",
+    "add-build"
+  ]
+}
