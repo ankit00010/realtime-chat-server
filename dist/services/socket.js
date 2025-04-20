@@ -9,20 +9,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.client = void 0;
-exports.initializeMongo = initializeMongo;
-const mongodb_1 = require("mongodb");
-let client;
-function initializeMongo() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            let mongoURI = process.env.MONGO_URI || "";
-            exports.client = client = new mongodb_1.MongoClient(mongoURI);
-            yield client.connect();
-            console.log("Connected to the MongoDB database");
-        }
-        catch (error) {
-            console.error("Error connecting to the database:", error);
-        }
-    });
+const socket_io_1 = require("socket.io");
+class SocketService {
+    constructor() {
+        console.log("Init Socket Service...");
+        this._io = new socket_io_1.Server();
+    }
+    initListners() {
+        const io = this._io;
+        console.log(`Init Socket Listeners...`);
+        io.on('connect', (socket) => {
+            console.log("New Socket Connected", socket.id);
+            socket.on(`event:message`, (_a) => __awaiter(this, [_a], void 0, function* ({ message }) {
+                console.log("New message received : ", message);
+            }));
+        });
+    }
+    get io() {
+        return this._io;
+    }
 }
+exports.default = SocketService;

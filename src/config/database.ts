@@ -16,6 +16,4 @@ export async function initializeMongo() {
   }
 }
 
-export function getClient() {
-  return client;
-}
+export {client};
