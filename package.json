@@ -9,7 +9,7 @@
     "build": "rimraf dist && tsc",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint .",
     "prepare": "npm run build"
   },
   "keywords": [
@@ -39,6 +39,7 @@
     "socket.io": "^4.8.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.25.0",
     "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
@@ -48,12 +49,14 @@
     "@typescript-eslint/eslint-plugin": "^8.30.1",
     "@typescript-eslint/parser": "^8.30.1",
     "dotenv": "^16.5.0",
-    "eslint": "^9.24.0",
+    "eslint": "^8.57.1",
+    "globals": "^16.0.0",
     "nodemon": "^3.1.9",
     "pre-commit": "^1.2.2",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.30.1"
   },
   "pre-commit": [
     "ts.check",

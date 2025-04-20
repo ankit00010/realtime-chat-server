@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import cors from "cors";
 import http from "http";
 import passport from "passport";
-import { Server } from "socket.io";
 
 // Import custom modules and configurations
 import { initializeMongo } from "./config/database";
