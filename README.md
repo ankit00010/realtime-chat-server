@@ -1,4 +1,4 @@
-# Real-Time Chat & Media Sharing Web Application
+# Real-Time Chat [IN PROGRESS]
 
 ## Overview
 This project aims to build a **real-time web application** where users can engage in **instant messaging** and share **media content** such as **images**, **videos**, and **GIFs**. The application will provide a seamless experience for users to:
@@ -8,7 +8,7 @@ This project aims to build a **real-time web application** where users can engag
 - Implement **video call** functionality in the second version.
 
 ### Two Major Versions:
-1. **Version 1**: **Text-based real-time messaging** using **Socket.IO**.
+1. **Version 1**: **Text-based real-time messaging** using **Socket.IO**.[IN PROGRESS]
 2. **Version 2**: **Media sharing** (images, videos) and **video calls** using **WebRTC**.
 
 ---
